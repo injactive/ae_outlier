@@ -27,15 +27,6 @@ class AutoEncoder(object):
         self.optimizer = tf.optimizers.Adam()
         self.total_n_epochs = 0
 
-    def configure_config(self, config):
-
-        if type(config['Activations']) is not list:
-            config['Activations'] = (len(config['HiddenLayers'])+1)*[config['Activations']]
-        
-        if type(config['InitWeights']) is not list:
-            config['InitWeights'] = (len(config['HiddenLayers'])+1)*[config['InitWeights']]
-
-        return config
 
     def print_config(self):
         pprint.pprint(self.config)
